@@ -36,7 +36,7 @@
 			//-------------------------------------------------------------------------------------------
 			var configOptions = {
 				// Enter an application ID created through the Map Series builder 
-				appid: "",
+				appid: "014044fd65484a1ab965318f8b04d686",
 				// Optionally to secure Series's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
 				oAuthAppId: "",
@@ -67,7 +67,12 @@
 	</head>
 	<body class="claro">
 		<style>
-			/* CUSTOM CSS RULES */
+		.legendDijitContainer{
+			display: none;
+		}
+		.legend-img{
+			max-width: 100%;
+		}
 		</style>
 		
 		<!-- Builder top panel is injected here -->
@@ -339,6 +344,10 @@
 					/*
 					 * Custom Javascript to be executed when the application is ready goes here
 					 */
+					setTimeout(function(){
+						$('.legend .content').append('<img class="legend-img" src="resources/tpl/viewer/images/legend.jpg" alt="Legend">');
+						$('.legendMobile').append('<img class="legend-img" src="resources/tpl/viewer/images/legend.jpg" alt="Legend">');
+					},1000);
 				});
 			});
 		</script>

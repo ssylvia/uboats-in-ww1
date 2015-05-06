@@ -254,6 +254,14 @@
 						src:['jsapi-optim-modules-viewer.txt', 'jsapi-optim-modules-builder.txt'],
 						dest: 'deploy/'
 					}]
+				},
+				ftp: {
+					files: [{
+						expand: true,
+						cwd: 'src',
+						src:['sftp-config.json'],
+						dest: 'deploy/'
+					}]
 				}
 			},
 			
@@ -442,7 +450,9 @@
 			
 			'copy:readme',
 			'clean:jsapioptim', 
-			'clean:fontello'
+			'clean:fontello',
+
+			'copy:ftp'
 		]);
 		
 		/*
